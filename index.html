@@ -1,77 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💖 Acceso Secreto 💖</title>
-  <style>
-    body {
-      background: linear-gradient(#ffdee9, #b5fffc);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .frase {
-      font-style: italic;
-      color: #666;
-      margin-bottom: 30px;
-      max-width: 80%;
-    }
-    input {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-      width: 200px;
-      text-align: center;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #ff8fab;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #ff5e8e;
-    }
-    .error {
-      color: red;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frase {
+            font-style: italic;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+            font-size: 1.4em;
+        }
+
+        .entrada {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="password"] {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #ccc;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 10px 15px;
+            font-size: 1em;
+            border: none;
+            background-color: #fff;
+            color: #000;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .imagen {
+            margin-top: 20px;
+        }
+
+        .imagen img {
+            max-width: 250px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Introduce la contraseña 🎁</h1>
-  <div class="frase">“<i>Las primeras veces, las primeras palabras… a veces esconden más de lo que imaginas</i>”</div>
+    <div class="frase">
+        “Las primeras veces, las primeras palabras… a veces esconden más de lo que imaginas”.
+    </div>
 
-  <input type="password" id="password" placeholder="Contraseña">
-  <button onclick="checkPassword()">Acceder</button>
-  <div class="error" id="error"></div>
+    <div class="entrada">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
 
-  <script>
-    function checkPassword() {
-      const password = document.getElementById("password").value;
-      const correctPassword = "LOVEURAQUEL"; // Cambia esto por la contraseña que tú elijas
+    <div class="imagen">
+        <img src="foto.jpg" alt="Imagen">
+    </div>
 
-      if (password === correctPassword) {
-        window.location.href = "regalo.html";
-      } else {
-        document.getElementById("error").innerText = "Contraseña incorrecta ❌";
-      }
-    }
-  </script>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === "LOVEURAQUEL") {
+                window.location.href = "regalo.html";
+            } else {
+                alert("Contraseña incorrecta.");
+            }
+        }
+    </script>
 
 </body>
 </html>
