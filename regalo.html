@@ -26,40 +26,48 @@
             letter-spacing: 1px;
         }
 
-        video {
-            max-width: 90%;
-            height: auto;
-            border: 2px solid #fff;
-            border-radius: 10px;
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            padding-bottom: 56.25%; /* 16:9 ratio */
             margin-bottom: 20px;
         }
 
-    
-        .frase {
-    font-style: italic;
-    font-size: 1.2em;
-    max-width: 600px;
-    margin-top: 20px;
-    color: #ccc;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-}
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
+        .frase {
+            font-style: italic;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-top: 20px;
+            color: #ccc;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
 
     <h1>PARA RAQUEL</h1>
 
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Tu navegador no soporta el vídeo.
-    </video>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/1VakPkj7uwk" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <div class="frase">
         “La medida del amor es amar sin medida.”<br>— San Agustín
